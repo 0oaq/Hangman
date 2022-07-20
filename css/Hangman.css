@@ -1,0 +1,8 @@
+body{
+    background-color: grey;
+}
+.Guesses{
+    width: 100px;
+    display:inline-block;
+    height: 100px;
+}

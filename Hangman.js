@@ -7,6 +7,11 @@ let bodyPieces = [
     { name: "leftArm", orderIndex: 4 },
     { name: "rightArm", orderIndex: 5 },
 ]
+function playerType() {
+    alert(prompt("Would you like to choose a word for someone else to guess?(Multiplayer)\r\n \r\nOr have us pick one for you?(Singleplayer)\r\n \r\nType S for singleplayer and M for multiplayer", "Input here"))
+}
+
+playerType();
 
 function setDebugString(InNewString) {
     let debugging = document.getElementById("debugString");
@@ -16,13 +21,16 @@ function setDebugString(InNewString) {
 setDebugString("<p>WE NEED TO BUILD A WALL</p>")
 
 const guessBox = document.getElementById("guessBox");
-const testGuess = document.getElementById("A");
+
 
 let guessClicked = false
 
-
-
-
+function onGuessClick(letter) {
+    if (guessClicked == false) {
+        guessBox.value = (letter)
+    }
+    guessClicked = true
+}
 
 
 /*
