@@ -2,15 +2,24 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/title.css"/>
-    
+    <script type="text/javascript" src="Hangman.js" defer></script>
+   
 </head>
 <Body>
     
     <h1>
         </p><p style="text-align: center; margin-top: 300px; color: red; font-size: 150px">HANGMAN</p>
     </h1>
+    <h2 style="text-align:center; margin-top: 300px;">Would you like to have the computer choose a word for you (Computer's choice), choose a word for someone else or have someone else choose a word for you (Human's choice)</h2>  
 
-    <p><a href="Hangman.html" style="border:solid; border-color: brown;">Singleplayer</a></p>
+
+            
+    <form action="Hangman.html">
+        <button id="automatic" onClick="onComputerClick()">Computers Choice</button>
+        <button id="Manual" onClick="onHumanClick()">Humans Choice</button>
+    </form>
+  
+    
 
 </Body>
 </html>
