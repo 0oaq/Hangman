@@ -1,3 +1,27 @@
+let Human = document.getElementById("manual")
+let Computer = document.getElementById("computer")
+
+
+
+function onHumanClick() {
+
+    let wordInput = prompt("hello");
+   
+
+    //console.log(wordInput)
+
+
+    function setGuessWord(InNewString) {
+        let mysteryWord = document.getElementById("changingWord");
+        mysteryWord.innerHTML = InNewString;
+    }
+
+    setGuessWord(wordInput);
+   
+}
+
+
+
 
 let bodyPieces = [
     { name: "head", orderIndex: 0 },
@@ -7,29 +31,18 @@ let bodyPieces = [
     { name: "leftArm", orderIndex: 4 },
     { name: "rightArm", orderIndex: 5 },
 ]
-function playerType() {
-    alert(prompt("Would you like to choose a word for someone else to guess?(Multiplayer)\r\n \r\nOr have us pick one for you?(Singleplayer)\r\n \r\nType S for singleplayer and M for multiplayer", "Input here"))
-}
 
-playerType();
-
-function setDebugString(InNewString) {
-    let debugging = document.getElementById("debugString");
-    debugging.innerHTML = InNewString
-}
-
-setDebugString("<p>WE NEED TO BUILD A WALL</p>")
 
 const guessBox = document.getElementById("guessBox");
 
 
-let guessClicked = false
+let guessClicked = false;
 
 function onGuessClick(letter) {
     if (guessClicked == false) {
-        guessBox.value = (letter)
+        guessBox.value = (letter);
     }
-    guessClicked = true
+    guessClicked = true;
 }
 
 
