@@ -3,10 +3,13 @@ let Computer = document.getElementById("computer")
 
 
 
-function onHumanClick() {
+
+if (document.URL.includes("Hangman.html?userFlag=0")) {
+
+
 
     let wordInput = prompt("hello");
-   
+
 
     //console.log(wordInput)
 
@@ -17,8 +20,10 @@ function onHumanClick() {
     }
 
     setGuessWord(wordInput);
-   
+
+    console.log(wordInput.length)
 }
+
 
 
 
