@@ -5,28 +5,27 @@ let mysteryWord = document.getElementById("changingWord");
 let guessClicked = false;
 let guesses = []
 let wordInput = ""
-let bodyPieces = [
-    { name: "head", orderIndex: 0 },
-    { name: "torso", orderIndex: 1 },
-    { name: "leftLeg", orderIndex: 2 },
-    { name: "rightLeg", orderIndex: 3 },
-    { name: "leftArm", orderIndex: 4 },
-    { name: "rightArm", orderIndex: 5 },
-]
 // listing out every variable so I can call them later
 
-String.prototype.replaceAt = function(index, replacement) {
+String.prototype.replaceAt = function(index, replacement)
+// Add a member function to String that replaces characters starting at index with the replacement string
+{
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+      //this.substring(0, index) returns the string to the left of the index 
+  //    "tiger".substring(0, 2) returns "ti"
+  //this.substring(index + replacement.length) returns the string to the right of the index AND the replacement string
+  //    if replacement string of "zz"
+  //    "tiger.substring(2+2) returns "r"
 }
 
 function onGuessClick(letter) {
-    letter = letter.toUpperCase()
+    letter.toUpperCase
     if (guessClicked == false) {
         guesses.push(letter);
         for (let i = 0; i < wordInput.length; i++){
             if(wordInput[i] === letter) {
                 mysteryWord.innerHTML = mysteryWord.innerHTML.replaceAt(i, letter);
-            }
+            } 
         }
     }
     pastGuesses.innerHTML = guesses
@@ -50,6 +49,8 @@ if (document.URL.includes("Hangman.html?userFlag=0")) {
     setGuessWord(wordInputReplace);
 }
 // changes every index of the word that is a letter to an underscore
+
+
 
 
 
