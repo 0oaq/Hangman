@@ -2,9 +2,11 @@ let pastGuesses = document.getElementById("pastGuesses")
 let Human = document.getElementById("manual")
 let Computer = document.getElementById("computer")
 let mysteryWord = document.getElementById("changingWord");
+let lostGame = document.getElementById("enableDisability")
 let guessClicked = false;
 let guesses = []
 let wordInput = ""
+let numGuesses = 0
 // listing out every variable so I can call them later
 
 String.prototype.replaceAt = function(index, replacement)
@@ -22,13 +24,28 @@ function onGuessClick(letter) {
     letter.toUpperCase
     if (guessClicked == false) {
         guesses.push(letter);
+
+        let bFoundMatch = false;
+
         for (let i = 0; i < wordInput.length; i++){
             if(wordInput[i] === letter) {
                 mysteryWord.innerHTML = mysteryWord.innerHTML.replaceAt(i, letter);
-            } 
+                bMatchFound = true;
+            }
+        }
+
+        if (!bFoundMatch)
+        {
+            numGuesses++
         }
     }
     pastGuesses.innerHTML = guesses
+
+    console.log(numGuesses)
+
+    if(numGuesses == 7){
+        lostGame.disabled = true
+    }
   
 }
 // upends the value of every button clicked to the array "guesses"
