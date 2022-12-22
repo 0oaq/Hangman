@@ -2,9 +2,12 @@ let pastGuesses = document.getElementById("pastGuesses")
 let Human = document.getElementById("manual")
 let Computer = document.getElementById("computer")
 let mysteryWord = document.getElementById("changingWord");
+let lostGame = document.getElementById("disabilityAwareness")
 let guessClicked = false;
 let guesses = []
 let wordInput = ""
+let numGuesses = 0
+let numGamesLost = 0
 // listing out every variable so I can call them later
 
 String.prototype.replaceAt = function(index, replacement)
@@ -22,14 +25,24 @@ function onGuessClick(letter) {
     letter.toUpperCase
     if (guessClicked == false) {
         guesses.push(letter);
+
+        let bFoundMatch = false;
+
         for (let i = 0; i < wordInput.length; i++){
             if(wordInput[i] === letter) {
                 mysteryWord.innerHTML = mysteryWord.innerHTML.replaceAt(i, letter);
-            } 
+                bMatchFound = true;
+            }
+        }
+
+        if (!bFoundMatch)
+        {
+            numGuesses++
         }
     }
     pastGuesses.innerHTML = guesses
-  
+
+    console.log(numGuesses)
 }
 // upends the value of every button clicked to the array "guesses"
 
@@ -69,7 +82,6 @@ Respond to Key or "Enter"
 Check key against secret word
 Display "correct"/"incorrect"
 Increment how many wrong answers
-
 Note which letters have already been guessed
 Drawing of the body
 */
