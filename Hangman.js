@@ -1,15 +1,14 @@
-
-let lostGame = document.getElementById("disabilityAwareness")
 let pastGuesses = document.getElementById("pastGuesses")
 let Human = document.getElementById("manual")
 let Computer = document.getElementById("computer")
 let mysteryWord = document.getElementById("changingWord");
-
-
+let lostGame = document.getElementById("disabilityAwareness")
+let debuggingTest = document.getleemenetById("debugString")
 let guessClicked = false;
 let guesses = []
 let wordInput = ""
 let numGuesses = 0
+let numlostGames = 0
 // listing out every variable so I can call them later
 
 String.prototype.replaceAt = function(index, replacement)
@@ -47,7 +46,7 @@ function onGuessClick(letter) {
     console.log(numGuesses)
 
     if(numGuesses == 7){
-        lostGame.disabled = true
+      numLostGames++
     }
   
 }
