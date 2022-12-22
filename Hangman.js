@@ -3,12 +3,14 @@ let Human = document.getElementById("manual")
 let Computer = document.getElementById("computer")
 let mysteryWord = document.getElementById("changingWord");
 let lostGame = document.getElementById("disabilityAwareness")
-let debuggingTest = document.getleemenetById("debugString")
+let debuggingTest = document.getElementById("debugString")
 let guessClicked = false;
 let guesses = []
 let wordInput = ""
 let numGuesses = 0
-let numlostGames = 0
+let numGamesLost = 0
+
+console.log("fuff")
 // listing out every variable so I can call them later
 
 String.prototype.replaceAt = function(index, replacement)
@@ -46,8 +48,9 @@ function onGuessClick(letter) {
     console.log(numGuesses)
 
     if(numGuesses == 7){
-      numLostGames++
+      numGamesLost++
     }
+   console.log(numGamesLost)
   
 }
 // upends the value of every button clicked to the array "guesses"
